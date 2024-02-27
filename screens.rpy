@@ -318,7 +318,7 @@ screen main_menu():
     vbox:
         xalign 0.5
         yalign 0.1
-        text "Alice in Wonderland" size 80 color "#000" font "HennyPenny-Regular.ttf"
+        text menu_title size 80 color "#000" font "HennyPenny-Regular.ttf"
 
     vbox:
 
