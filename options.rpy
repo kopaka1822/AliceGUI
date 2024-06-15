@@ -27,6 +27,9 @@ define gui.show_name = True
 define config.gestures = { }
 define config.dispatch_gesture = None
 
+## Graphics ####################################################################
+
+default preferences.graphic_preset = 1 # 3 presets: 0 = low, 1 = medium, 2 = high
 
 ## Sounds and music ############################################################
 

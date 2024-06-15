@@ -718,6 +718,7 @@ screen preferences():
         use audio_settings
         use text_settings
         use system_settings
+        use graphics_settings
 
 
 
@@ -829,6 +830,40 @@ screen text_settings():
             #     action Preference("text speed", 50), Preference("auto-forward time", 4)
             #     tooltip _("Reset text settings to default")
 
+screen graphics_settings():
+
+    vbox:
+        xalign 0.0
+
+        vbox:
+            style_prefix "check"
+            label _("Graphics")
+            hbox:
+                imagebutton:
+                    alt "Low"
+                    auto default_button_image
+                    hover_foreground Text(_("{u}Low{/u}"), xalign=0.5, yalign=0.5)
+                    idle_foreground Text(_("Low"), xalign=0.5, yalign=0.5)
+                    selected_background "#5f9bff"
+                    action SetVariable("preferences.graphic_preset", 0)
+
+                imagebutton:
+                    alt "Medium"
+                    auto default_button_image
+                    hover_foreground Text(_("{u}Medium{/u}"), xalign=0.5, yalign=0.5)
+                    idle_foreground Text(_("Medium"), xalign=0.5, yalign=0.5)
+                    selected_background "#5f9bff"
+                    action SetVariable("preferences.graphic_preset", 1)
+                
+                imagebutton:
+                    alt "High"
+                    auto default_button_image
+                    hover_foreground Text(_("{u}High{/u}"), xalign=0.5, yalign=0.5)
+                    idle_foreground Text(_("High"), xalign=0.5, yalign=0.5)
+                    selected_background "#5f9bff"
+                    action SetVariable("preferences.graphic_preset", 2)
+
+                
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
