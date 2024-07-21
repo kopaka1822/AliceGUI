@@ -332,7 +332,6 @@ screen main_menu():
             hover_foreground Text(_("Continue"), xalign=0.5, yalign=0.5)
             idle_foreground Text(_("Continue"), xalign=0.5, yalign=0.5)
             action Start(label="autoload")
-            tooltip _("Continue the game")
 
         # imagebutton:
         #     alt "load"
@@ -348,7 +347,6 @@ screen main_menu():
             hover_foreground Text(_("Chapter"), xalign=0.5, yalign=0.5)
             idle_foreground Text(_("Chapter"), xalign=0.5, yalign=0.5)
             action ShowMenu("chapter_select")
-            tooltip _("Load a chapter")
 
         imagebutton:
             alt "Settings"
@@ -356,7 +354,6 @@ screen main_menu():
             hover_foreground Text(_("Settings"), xalign=0.5, yalign=0.5)
             idle_foreground Text(_("Settings"), xalign=0.5, yalign=0.5)
             action ShowMenu("preferences")
-            tooltip _("Adjust game settings")
 
         imagebutton:
             alt "Language"
@@ -364,7 +361,6 @@ screen main_menu():
             hover_foreground Text(_("Language"), xalign=0.5, yalign=0.5)
             idle_foreground Text(_("Language"), xalign=0.5, yalign=0.5)
             action ShowMenu("language")
-            tooltip _("Adjust game language")
 
         imagebutton:
             alt "credits"
@@ -372,7 +368,6 @@ screen main_menu():
             hover_foreground Text(_("Credits"), xalign=0.5, yalign=0.5)
             idle_foreground Text(_("Credits"), xalign=0.5, yalign=0.5)
             action ShowMenu("credits")
-            tooltip _("Show Credits")
 
     vbox:
         xalign 0.5
@@ -434,7 +429,6 @@ screen nav_content():
         hover_foreground Text(_("Return"), xalign=0.5, yalign=0.5)
         idle_foreground Text(_("Return"), xalign=0.5, yalign=0.5)
         action Return()
-        tooltip _("Return to the main menu")
 
 ## text alignment adjusted in line 289 or gui.rpy
 # define gui.main_menu_text_xalign = 0.5
@@ -1455,8 +1449,8 @@ screen chapter_select():
                 imagebutton:
                     alt "Chapter {}".format(i)
                     auto default_button_image
-                    hover_foreground Text("Chapter {}".format(i), xalign=0.5, yalign=0.5, color="#FFFFFF")
-                    idle_foreground Text("Chapter {}".format(i), xalign=0.5, yalign=0.5, color="#FFFFFF")
+                    hover_foreground Text(_("Chapter {}").format(i), xalign=0.5, yalign=0.5, color="#FFFFFF")
+                    idle_foreground Text(_("Chapter {}").format(i), xalign=0.5, yalign=0.5, color="#FFFFFF")
                     #action Jump("chapter{}".format(i))
                     action Start(label="chapter{}".format(i))
                     size_group "chapters"
@@ -1474,6 +1468,7 @@ screen credits():
         style_prefix "credits"
         text "Director: Kopaka\n"
         text "Original Script: Lewis Carroll\n"
+        text "Simple English and German: Kopaka\n"
         text "Art: Created with DALL·E 2"
         text "Edited by XL3xy, Kopaka\n"
         text "Music: {a=https://www.youtube.com/@RinneMusic}Rinne Music{/a}\n"
