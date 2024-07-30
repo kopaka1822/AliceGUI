@@ -5,16 +5,11 @@
 init offset = -1
 
 init +1 python:
-    class LoadMostRecent(Action):
-
-        def __init__(self):
-            self.slot = renpy.newest_slot()
-
-        def __call__(self):
-            renpy.load(self.slot)
-
-        def get_sensitive(self):
-            return self.slot is not None
+    def reset_game():
+        persistent.started_story = False
+        
+        # Optionally, confirm with the player
+        renpy.notify("started game has been reset.")
 
 ################################################################################
 ## Styles
@@ -369,6 +364,13 @@ screen main_menu():
             idle_foreground Text(_("Credits"), xalign=0.5, yalign=0.5)
             action ShowMenu("credits")
 
+        #imagebutton:
+        #    alt "reset game"
+        #    auto default_button_image
+        #    hover_foreground Text(_("Reset Game"), xalign=0.5, yalign=0.5)
+        #    idle_foreground Text(_("Reset Game"), xalign=0.5, yalign=0.5)
+        #    action Function(reset_game)
+
     vbox:
         xalign 0.5
         yalign 1.0
@@ -386,6 +388,7 @@ screen main_menu():
                     idle "gui/yt_logo.png"
                     hover "gui/yt_logo_hover.png"
                     action OpenURL("https://www.youtube.com/channel/UCo7fO7SwKzRmm9xGxHJVhaA")
+
 
 
 style main_menu_frame is empty
