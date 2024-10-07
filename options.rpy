@@ -38,7 +38,7 @@ default preferences.graphic_preset = 1 # 3 presets: 0 = low, 1 = medium, 2 = hig
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = False
+define config.has_voice = True
 
 ## The default volume of the music mixer, which is used for the music and
 ## movie audio channels. This should be a number between 0.0 and 1.0
